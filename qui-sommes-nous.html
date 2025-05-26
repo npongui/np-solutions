@@ -5,94 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NP-SOLUTIONS | Qui sommes-nous ?</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
+    body {
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      margin: 0;
+      background: #f8f9fa url('logo-nps.png') no-repeat center center fixed;
+      background-size: 300px;
+      background-blend-mode: lighten;
       color: #333;
-      position: relative;
-      min-height: 100vh;
-      overflow-x: hidden;
     }
-
-    body::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 600px;
-      height: 600px;
-      background: url('https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true') no-repeat center center;
-      background-size: contain;
-      opacity: 0.05;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      pointer-events: none;
-    }
-
     header {
       background: #003366;
       color: #fff;
       text-align: center;
       padding: 30px 20px;
-      position: relative;
-      z-index: 1;
     }
-
     nav {
       background-color: #003366;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
     }
-
     nav a {
       color: white;
       text-decoration: none;
       padding: 15px 18px;
       font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s;
     }
-
-    nav a:hover,
+    nav a:hover {
+      border-bottom: 3px solid #f39c12;
+    }
     nav a.active {
       border-bottom: 3px solid #f39c12;
     }
-
     .container {
       max-width: 960px;
       margin: 40px auto;
-      background: rgba(255, 255, 255, 0.97);
+      background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
     }
-
     h2 {
       color: #003366;
-      margin-top: 20px;
+      margin-top: 40px;
     }
-
     ul {
       list-style-type: none;
       padding-left: 0;
     }
-
     li::before {
       content: "✔️ ";
       margin-right: 6px;
     }
-
     footer {
       background: #f1f1f1;
       text-align: center;
@@ -100,15 +64,11 @@
       font-size: 0.9em;
       color: #666;
       margin-top: 40px;
-      position: relative;
-      z-index: 1;
     }
-
     a {
       color: #003366;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
@@ -116,41 +76,40 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;">
-    <h1>NP-SOLUTIONS</h1>
-    <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
-    <p>📍 Île-de-France – France entière - Afrique</p>
-  </header>
+<header>
+  <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;">
+  <h1>NP-SOLUTIONS</h1>
+  <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
+  <p>📍 Île-de-France – France entière - Afrique</p>
+</header>
 
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="qui-sommes-nous.html" class="active">Qui sommes-nous</a>
-    <a href="domaines-expertise.html">Nos domaines d’expertise</a>
-    <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
-    <a href="tarifaire.html">Grille Tarifaire</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="demande-devis.html">Demande de contact ou de devis</a>
-    <a href="references.html">Références</a>
-  </nav>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="qui-sommes-nous.html" class="active">Qui sommes-nous</a>
+  <a href="domaines-expertise.html">Nos domaines d’expertise</a>
+  <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
+  <a href="tarifaire.html">Grille Tarifaire</a>
+  <a href="contact.html">CONTACT</a>
+  <a href="references.html">Références</a>
+</nav>
 
-  <div class="container">
-    <h2>🔹 QUI SOMMES-NOUS ?</h2>
-    <p>NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :</p>
-    <ul>
-      <li>L’assistance à maîtrise d’ouvrage fonctionnelle</li>
-      <li>Les systèmes et moyens de paiement</li>
-    </ul>
-    <p><strong>🎯 Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.</p>
-  </div>
+<div class="container">
+  <h2>🔹 QUI SOMMES-NOUS ?</h2>
+  <p>NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :</p>
+  <ul>
+    <li>L’assistance à maîtrise d’ouvrage fonctionnelle</li>
+    <li>Les systèmes et moyens de paiement</li>
+  </ul>
+  <p><strong>🎯 Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.</p>
+</div>
 
-  <footer>
-    <a href="mentions-legales.html">Mentions Légales</a> | 
-    <a href="blog.html">Blog</a> | 
-    <a href="references.html">Références</a>
-    <br/>
-    &copy; 2025 NP-SOLUTIONS – Tous droits réservés
-  </footer>
+<footer>
+  <a href="mentions-legales.html">Mentions Légales</a> | 
+  <a href="blog.html">Blog</a> | 
+  <a href="references.html">Références</a>
+  <br/>
+  &copy; 2025 NP-SOLUTIONS – Tous droits réservés
+</footer>
 
 </body>
 </html>
