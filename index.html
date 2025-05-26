@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NP-SOLUTIONS | Conseil & Expertise IT</title>
+  <title>NP-SOLUTIONS | Accueil</title>
   <style>
+    /* CSS commun */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       background: #f8f9fa;
       color: #333;
@@ -30,6 +31,34 @@
       object-fit: contain;
     }
 
+    header {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-bottom: 3px solid #f39c12;
+    }
+
     .container {
       max-width: 960px;
       margin: 40px auto;
@@ -37,41 +66,19 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
     }
 
     h2 {
       color: #003366;
-      margin-bottom: 20px;
+      margin-top: 40px;
     }
 
-    p {
-      margin-bottom: 20px;
-      line-height: 1.6;
+    p, ul {
+      margin-bottom: 15px;
     }
 
-    .cta-button {
-      background-color: #f39c12;
-      color: white;
-      padding: 12px 25px;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .cta-button:hover {
-      background-color: #e67e22;
-    }
-
-    a {
-      color: #003366;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    ul {
+      padding-left: 20px;
     }
 
     footer {
@@ -82,43 +89,63 @@
       color: #666;
       margin-top: 40px;
     }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Filigrane -->
   <div class="watermark">
     <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
   </div>
 
-  <!-- En-tête chargé dynamiquement -->
-  <div id="header-container"></div>
+  <header>
+    <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;" />
+    <h1>NP-SOLUTIONS</h1>
+    <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
+    <p>📍 Île-de-France – France entière - Afrique</p>
+  </header>
 
-  <div class="container">
-    <h2>Bienvenue sur le site de NP-SOLUTIONS</h2>
-    <p>
-      Vous recherchez un partenaire de confiance pour vos projets numériques ?<br/>
-      NP-SOLUTIONS met à votre service son expertise en systèmes et moyens de paiement, maîtrise d’ouvrage, pilotage de projets, et transformation digitale.
-    </p>
-    <p>
-      Notre objectif : vous accompagner avec efficacité, indépendance et agilité pour accélérer la réussite de vos projets.
-    </p>
-    <a href="demande-devis.html" class="cta-button">Demande de contact ou de devis</a>
-  </div>
+  <nav>
+    <a href="index.html" class="active">Accueil</a>
+    <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+    <a href="domaines-expertise.html">Nos domaines d’expertise</a>
+    <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
+    <a href="tarifaire.html">Grille Tarifaire</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="references.html">Références</a>
+  </nav>
 
-  <!-- Pied de page chargé dynamiquement -->
-  <div id="footer-container"></div>
+  <main class="container">
+    <h2>Bienvenue chez NP-SOLUTIONS</h2>
+    <p>NP-SOLUTIONS vous accompagne dans votre transformation numérique grâce à son expertise en conseil IT, systèmes de paiement, et gestion des données.</p>
+    <p>Nous intervenons en Île-de-France, sur tout le territoire français, ainsi qu’en Afrique.</p>
 
-  <script>
-    // Chargement du header et du footer
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header-container').innerHTML = data);
+    <h3>Nos engagements :</h3>
+    <ul>
+      <li>Approche personnalisée adaptée à vos besoins</li>
+      <li>Solutions innovantes et sécurisées</li>
+      <li>Accompagnement au long terme pour la réussite de vos projets</li>
+    </ul>
 
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data);
-  </script>
+    <h3>Découvrez nos domaines d’expertise et nos offres de services.</h3>
+    <p>Explorez le menu pour en savoir plus sur ce que NP-SOLUTIONS peut vous apporter.</p>
+  </main>
+
+  <footer>
+    <a href="mentions-legales.html">Mentions Légales</a> | 
+    <a href="blog.html">Blog</a> | 
+    <a href="references.html">Références</a>
+    <br/>
+    &copy; 2025 NP-SOLUTIONS – Tous droits réservés
+  </footer>
 
 </body>
 </html>
