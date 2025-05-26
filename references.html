@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NP-SOLUTIONS | Références & Réalisations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NP-SOLUTIONS | Qui sommes-nous ?</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f8f9fa;
+      background: #f8f9fa;
       color: #333;
       position: relative;
     }
@@ -69,38 +69,17 @@
 
     h2 {
       color: #003366;
-      border-bottom: 2px solid #003366;
-      padding-bottom: 0.25rem;
       margin-top: 40px;
     }
 
     ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    li {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .client-name {
-      font-weight: bold;
-      color: #1e3799;
-    }
-
-    .project-title {
-      font-style: italic;
-      color: #4a69bd;
-    }
-
-    a {
-      color: #003366;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    li::before {
+      content: "✔️ ";
+      margin-right: 6px;
     }
 
     footer {
@@ -110,6 +89,15 @@
       font-size: 0.9em;
       color: #666;
       margin-top: 40px;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
