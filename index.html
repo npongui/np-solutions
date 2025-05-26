@@ -24,6 +24,31 @@
     h1 {
       margin: 10px 0 5px;
     }
+    /* MENU onglets en haut */
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      display: block;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover,
+    nav a.active {
+      border-bottom: 3px solid #f39c12; /* orange highlight */
+    }
     .container {
       max-width: 960px;
       margin: 40px auto;
@@ -53,6 +78,7 @@
       padding: 12px;
       border: 1px solid #ccc;
       text-align: left;
+      vertical-align: top;
     }
     th {
       background-color: #e9ecef;
@@ -86,6 +112,9 @@
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-family: inherit;
+      font-size: 1em;
+      box-sizing: border-box;
     }
     button {
       background-color: #003366;
@@ -94,21 +123,66 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 1em;
     }
     button:hover {
       background-color: #00509e;
     }
+
+    /* Responsive menu */
+    @media(max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
   </style>
+  <script>
+    // Active menu link + smooth scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+          const targetId = link.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          if(target) {
+            target.scrollIntoView({behavior: 'smooth'});
+          }
+        });
+      });
+      if(links.length) links[0].classList.add('active');
+    });
+  </script>
 </head>
 <body>
-  <header>
-    <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" class="logo"/>
-    <h1>NP-SOLUTIONS</h1>
-    <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
-    <p>📍 Île-de-France – France entière - Afrique</p>
-  </header>
 
-  <div class="container">
+<header>
+  <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" class="logo"/>
+  <h1>NP-SOLUTIONS</h1>
+  <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
+  <p>📍 Île-de-France – France entière - Afrique</p>
+</header>
+
+<nav>
+  <a href="#qui-sommes-nous">Qui sommes-nous</a>
+  <a href="#domaines-expertise">Nos domaines d’expertise</a>
+  <a href="#valeur-ajoutee">Notre valeur ajoutée</a>
+  <a href="#tarifaire">Grille Tarifaire – NP-SOLUTIONS (+Conditions générales France)</a>
+  <a href="#contact">CONTACT</a>
+  <a href="#demande-devis">Demande de contact ou de devis</a>
+</nav>
+
+<div class="container">
+
+  <section id="qui-sommes-nous">
     <h2>🔹 QUI SOMMES-NOUS ?</h2>
     <p>NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :</p>
     <ul>
@@ -116,7 +190,9 @@
       <li>Les systèmes et moyens de paiement</li>
     </ul>
     <p><strong>🎯 Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.</p>
+  </section>
 
+  <section id="domaines-expertise">
     <h2>🔎 Nos domaines d’expertise</h2>
     <table>
       <tr><th>Nos domaines d’expertise</th><th>Prestations</th></tr>
@@ -138,7 +214,9 @@
         </td>
       </tr>
     </table>
+  </section>
 
+  <section id="valeur-ajoutee">
     <h2>✅ Notre valeur ajoutée</h2>
     <ul>
       <li>Double expertise métier & IT</li>
@@ -147,7 +225,9 @@
       <li>Souplesse d’intervention : mission courte, régie, forfait</li>
       <li>Tarification transparente et compétitive</li>
     </ul>
+  </section>
 
+  <section id="tarifaire">
     <h2>🧾 Grille Tarifaire – NP-SOLUTIONS</h2>
     <p><em>Valable pour les prestations en France métropolitaine</em></p>
     <table>
@@ -155,10 +235,9 @@
         <th>Service</th><th>Détail</th><th>Tarif indicatif</th>
       </tr>
       <tr>
-        <td>🔧 Conseil & AMOA
+        <td>🔧 Conseil & AMOA</td>
         <td>Analyse du besoin, rédaction de spécifications, pilotage MOA</td>
         <td>600 à 750 € / jour HT</td>
-        </td>
       </tr>
       <tr>
         <td></td>
@@ -187,7 +266,9 @@
       <li>Assurance RC Pro incluse</li>
       <li>Intervention rapide sur site ou à distance</li>
     </ul>
+  </section>
 
+  <section id="contact">
     <h2>📍 CONTACT</h2>
     <p>
       <strong>NP-SOLUTIONS</strong><br/>
@@ -198,12 +279,13 @@
       📄 Statut : SASU – Conseil & expertise IT<br/>
       🛡️ RC Pro : incluse dans toutes nos prestations
     </p>
+  </section>
 
+  <section id="demande-devis">
     <h2>📬 Demande de contact ou de devis</h2>
     <input type="hidden" name="_captcha" value="false">
     <form action="https://formsubmit.co/npongui@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://npongui.github.io/np-solutions/merci.html" />
-  <!-- le reste du formulaire -->
       <label for="nom">Nom</label>
       <input type="text" id="nom" name="Nom" required />
 
@@ -215,7 +297,9 @@
 
       <button type="submit">Envoyer</button>
     </form>
-  </div>
+  </section>
+
+</div>
 
 <footer>
   <a href="mentions-legales.html">Mentions Légales</a> | 
