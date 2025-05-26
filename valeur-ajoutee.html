@@ -6,112 +6,79 @@
   <title>NP-SOLUTIONS | Notre valeur ajoutée</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       background: #f8f9fa;
       color: #333;
-      position: relative;
     }
-
-    .watermark {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.05;
-      pointer-events: none;
+    header {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
     }
-
-    .watermark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      border-bottom: 3px solid #f39c12;
+    }
     .container {
       max-width: 960px;
       margin: 40px auto;
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    h2 {
-      color: #003366;
-      border-bottom: 2px solid #003366;
-      padding-bottom: 0.25rem;
-      margin-top: 40px;
+    footer {
+      background:#f1f1f1;
+      text-align:center;
+      padding:20px;
+      font-size:0.9em;
+      color:#666;
+      margin-top:40px;
     }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-
-    li {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    strong {
-      color: #1e3799;
-    }
-
     a {
       color: #003366;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
-    footer {
-      background: #f1f1f1;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 40px;
+    .watermark {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .watermark img {
+      width: 100%; height: 100%;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
 
-  <!-- Filigrane -->
-  <div class="watermark">
-    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
-  </div>
+<div class="watermark">
+  <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
+</div>
 
-  <!-- En-tête chargé dynamiquement -->
-  <div id="header-container"></div>
-
-  <div class="container">
-    <h2>⭐ Notre valeur ajoutée</h2>
-    <ul>
-      <li><strong>Expertise spécialisée</strong> en systèmes et moyens de paiement, maîtrise d’ouvrage et pilotage de projets complexes.</li>
-      <li><strong>Indépendance</strong> vis-à-vis des éditeurs et intégrateurs pour garantir la neutralité des recommandations.</li>
-      <li><strong>Approche pragmatique</strong> centrée sur la satisfaction client, le respect des délais et la qualité des livrables.</li>
-      <li><strong>Agilité & flexibilité</strong> pour s’adapter aux spécificités métiers et aux évolutions technologiques.</li>
-      <li><strong>Expérience terrain</strong> au sein de grands groupes bancaires et fintechs, garantissant une compréhension fine des enjeux.</li>
-    </ul>
-  </div>
-
-  <!-- Pied de page chargé dynamiquement -->
-  <div id="footer-container"></div>
-
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header-container').innerHTML = data);
-
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data);
-  </script>
-
-</body>
-</html>
+<header>
+  <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;" />
+  <h1>NP-SOLUTIONS</h1>
+  <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
+  <p>📍
