@@ -5,18 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NP-SOLUTIONS | Qui sommes-nous ?</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
-      background-image: url('https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 60%;
-      background-attachment: fixed;
       color: #333;
+      position: relative;
+      min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: url('https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true') no-repeat center center;
+      background-size: contain;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     header {
@@ -24,6 +40,8 @@
       color: #fff;
       text-align: center;
       padding: 30px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     nav {
@@ -31,6 +49,8 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
 
     nav a {
@@ -50,10 +70,12 @@
     .container {
       max-width: 960px;
       margin: 40px auto;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.97);
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
 
     h2 {
@@ -78,6 +100,8 @@
       font-size: 0.9em;
       color: #666;
       margin-top: 40px;
+      position: relative;
+      z-index: 1;
     }
 
     a {
