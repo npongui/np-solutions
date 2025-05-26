@@ -30,51 +30,6 @@
       object-fit: contain;
     }
 
-    header {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    header img {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      margin: 10px 0;
-    }
-
-    header p {
-      margin: 0;
-    }
-
-    header p:last-of-type {
-      margin-top: 5px;
-    }
-
-    nav {
-      background-color: #003366;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 15px 18px;
-      font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s;
-    }
-
-    nav a:hover,
-    nav a.active {
-      border-bottom: 3px solid #f39c12;
-    }
-
     .container {
       max-width: 960px;
       margin: 40px auto;
@@ -110,15 +65,6 @@
       background-color: #e67e22;
     }
 
-    footer {
-      background: #f1f1f1;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 40px;
-    }
-
     a {
       color: #003366;
       text-decoration: none;
@@ -126,6 +72,15 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -136,22 +91,8 @@
     <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
   </div>
 
-  <header>
-    <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" />
-    <h1>NP-SOLUTIONS</h1>
-    <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
-    <p>📍 Île-de-France – France entière - Afrique</p>
-  </header>
-
-  <nav>
-    <a href="index.html" class="active">Accueil</a>
-    <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-    <a href="domaines-expertise.html">Nos domaines d’expertise</a>
-    <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
-    <a href="tarifaire.html">Grille Tarifaire</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="references.html">Références</a>
-  </nav>
+  <!-- En-tête chargé dynamiquement -->
+  <div id="header-container"></div>
 
   <div class="container">
     <h2>Bienvenue sur le site de NP-SOLUTIONS</h2>
@@ -165,13 +106,19 @@
     <a href="demande-devis.html" class="cta-button">Demande de contact ou de devis</a>
   </div>
 
-  <footer>
-    <a href="mentions-legales.html">Mentions Légales</a> | 
-    <a href="blog.html">Blog</a> | 
-    <a href="references.html">Références</a>
-    <br/>
-    &copy; 2025 NP-SOLUTIONS – Tous droits réservés
-  </footer>
+  <!-- Pied de page chargé dynamiquement -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Chargement du header et du footer
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-container').innerHTML = data);
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer-container').innerHTML = data);
+  </script>
 
 </body>
 </html>
