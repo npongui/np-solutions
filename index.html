@@ -2,30 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NP-SOLUTIONS | Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NP-SOLUTIONS | Conseil & Paiement</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background: #f8f9fa;
       color: #333;
-      position: relative;
-    }
-    .watermark {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.05;
-      pointer-events: none;
-    }
-    .watermark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
     }
     header {
       background: #003366;
@@ -33,23 +17,37 @@
       text-align: center;
       padding: 30px 20px;
     }
+    .logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 10px 0 5px;
+    }
+    /* MENU onglets en haut */
     nav {
       background-color: #003366;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav a {
       color: white;
       text-decoration: none;
       padding: 15px 18px;
+      display: block;
       font-weight: bold;
       border-bottom: 3px solid transparent;
       transition: border-color 0.3s;
+      cursor: pointer;
     }
     nav a:hover,
     nav a.active {
-      border-bottom: 3px solid #f39c12;
+      border-bottom: 3px solid #f39c12; /* orange highlight */
     }
     .container {
       max-width: 960px;
@@ -62,7 +60,28 @@
     h2 {
       color: #003366;
       margin-top: 40px;
-      margin-bottom: 25px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "✔️ ";
+      margin-right: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #e9ecef;
     }
     footer {
       background: #f1f1f1;
@@ -72,43 +91,221 @@
       color: #666;
       margin-top: 40px;
     }
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #00509e;
+    }
+
+    /* Responsive menu */
+    @media(max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
   </style>
+  <script>
+    // Active menu link + smooth scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+          const targetId = link.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          if(target) {
+            target.scrollIntoView({behavior: 'smooth'});
+          }
+        });
+      });
+      if(links.length) links[0].classList.add('active');
+    });
+  </script>
 </head>
 <body>
 
-<!-- Filigrane (watermark) -->
-<div class="watermark">
-  <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
-</div>
-
 <header>
-  <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;" />
+  <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" class="logo"/>
   <h1>NP-SOLUTIONS</h1>
   <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
   <p>📍 Île-de-France – France entière - Afrique</p>
 </header>
 
 <nav>
-  <a href="index.html" class="active">Accueil</a>
-  <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-  <a href="domaines-expertise.html">Nos domaines d’expertise</a>
-  <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
-  <a href="tarifaire.html">Grille Tarifaire – NP-SOLUTIONS (+Conditions générales France)</a>
-  <a href="contact.html">CONTACT</a>
-  <a href="demande-devis.html">Demande de contact ou de devis</a>
-  <a href="references.html">Références</a>
+  <a href="#qui-sommes-nous">Qui sommes-nous</a>
+  <a href="#domaines-expertise">Nos domaines d’expertise</a>
+  <a href="#valeur-ajoutee">Notre valeur ajoutée</a>
+  <a href="#tarifaire">Grille Tarifaire – NP-SOLUTIONS (+Conditions générales France)</a>
+  <a href="#contact">CONTACT</a>
+  <a href="#demande-devis">Demande de contact ou de devis</a>
 </nav>
 
 <div class="container">
-  <h2>Bienvenue sur le site de NP-SOLUTIONS</h2>
-  <p>Spécialiste en conseil IT, pilotage de projets, et systèmes de paiement, NP-SOLUTIONS accompagne les entreprises dans leur transformation numérique.</p>
-  <p><a href="demande-devis.html">Demande de contact ou de devis</a></p>
+
+  <section id="qui-sommes-nous">
+    <h2>🔹 QUI SOMMES-NOUS ?</h2>
+    <p>NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :</p>
+    <ul>
+      <li>L’assistance à maîtrise d’ouvrage fonctionnelle</li>
+      <li>Les systèmes et moyens de paiement</li>
+    </ul>
+    <p><strong>🎯 Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.</p>
+  </section>
+
+  <section id="domaines-expertise">
+    <h2>🔎 Nos domaines d’expertise</h2>
+    <table>
+      <tr><th>Nos domaines d’expertise</th><th>Prestations</th></tr>
+      <tr>
+        <td>🔧 Conseil & Maîtrise d’Ouvrage</td>
+        <td>
+          • Cadrage de besoins et analyse fonctionnelle<br/>
+          • Rédaction de cahiers des charges<br/>
+          • Conduite de projets IT (cycle en V, Agile)<br/>
+          • Pilotage MOA & coordination
+        </td>
+      </tr>
+      <tr>
+        <td>💳 Systèmes & Moyens de Paiement</td>
+        <td>
+          • Intégration SEPA, carte, wallet, virement instantané<br/>
+          • Open banking / DSP2 / API & connecteurs<br/>
+          • Projets ISO 20022 / migration CORE / SWITCH
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="valeur-ajoutee">
+    <h2>✅ Notre valeur ajoutée</h2>
+    <ul>
+      <li>Double expertise métier & IT</li>
+      <li>Expérience grands comptes & ETI (finance, télécoms, services)</li>
+      <li>Adaptabilité aux méthodes Agile ou V-cycle</li>
+      <li>Souplesse d’intervention : mission courte, régie, forfait</li>
+      <li>Tarification transparente et compétitive</li>
+    </ul>
+  </section>
+
+  <section id="tarifaire">
+    <h2>🧾 Grille Tarifaire – NP-SOLUTIONS</h2>
+    <p><em>Valable pour les prestations en France métropolitaine</em></p>
+    <table>
+      <tr>
+        <th>Service</th><th>Détail</th><th>Tarif indicatif</th>
+      </tr>
+      <tr>
+        <td>🔧 Conseil & AMOA</td>
+        <td>Analyse du besoin, rédaction de spécifications, pilotage MOA</td>
+        <td>600 à 750 € / jour HT</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Gestion de projet (Agile, V-Cycle)</td>
+        <td>À partir de 700 € / jour</td>
+      </tr>
+      <tr>
+        <td>💳 Moyens de paiement</td>
+        <td>Cadrage, intégration SEPA/carte/wallet, open banking</td>
+        <td>700 à 850 € / jour HT</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Assistance migration / interfaçage SI monétique</td>
+        <td>700 à 800 € / jour HT</td>
+      </tr>
+    </table>
+
+    <h2>📝 Conditions générales France</h2>
+    <ul>
+      <li>Tarifs HT – Facturation mensuelle ou à la mission</li>
+      <li>Proposition sur-mesure avec livrables et planning</li>
+      <li>Frais inclus pour l’Île-de-France (en sus ailleurs)</li>
+      <li>Engagement minimum : 3 jours facturables</li>
+      <li>Réductions dès 20 jours ou mission pluri-service</li>
+      <li>Assurance RC Pro incluse</li>
+      <li>Intervention rapide sur site ou à distance</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>📍 CONTACT</h2>
+    <p>
+      <strong>NP-SOLUTIONS</strong><br/>
+      📧 <a href="mailto:npongui@gmail.com">npongui@gmail.com</a><br/>
+      📞 <a href="tel:+33772059874">+33 772 05 98 74</a><br/>
+      🌐 <a href="https://npongui.github.io/np-solutions/" target="_blank">npongui.github.io/np-solutions</a><br/>
+      📍 Intervention : Île-de-France et régions<br/>
+      📄 Statut : SASU – Conseil & expertise IT<br/>
+      🛡️ RC Pro : incluse dans toutes nos prestations
+    </p>
+  </section>
+
+  <section id="demande-devis">
+    <h2>📬 Demande de contact ou de devis</h2>
+    <input type="hidden" name="_captcha" value="false">
+    <form action="https://formsubmit.co/npongui@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://npongui.github.io/np-solutions/merci.html" />
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="Nom" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="message">Votre message</label>
+      <textarea id="message" name="Message" rows="6" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
 </div>
 
 <footer>
-  <a href="mentions-legales.html">Mentions Légales</a> |
-  <a href="blog.html">Blog</a> |
-  <a href="references.html">Références</a><br />
+  <a href="mentions-legales.html">Mentions Légales</a> | 
+  <a href="blog.html">Blog</a> | 
+  <a href="references.html">Références</a>
+  <br/>
   &copy; 2025 NP-SOLUTIONS – Tous droits réservés
 </footer>
 
