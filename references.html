@@ -1,77 +1,149 @@
-<section class="bg-white py-12 px-6 md:px-16">
-  <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b pb-2">📌 Références & Réalisations</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NP-SOLUTIONS | Références & Réalisations</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      position: relative;
+    }
 
-  <p class="text-gray-700 mb-6">Fort de 20 ans d'expérience dans la monétique et les systèmes de paiement, Nazaire PONGUI a mené avec succès des missions stratégiques pour le compte de grandes institutions financières en France et en Afrique. Voici quelques références majeures illustrant son expertise.</p>
+    .watermark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      pointer-events: none;
+    }
 
-  <div class="space-y-10">
+    .watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700">BNP PARIBAS – Projet EPI WERO (2024 – Aujourd’hui)</h3>
-      <p class="text-gray-700"><strong>Rôle :</strong> Business Analyst – Moyens de Paiement</p>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>Conduite fonctionnelle du projet européen EPI WERO sur le périmètre crédit commerçant et facturation.</li>
-        <li>Analyse d’impacts, spécifications fonctionnelles, animation d’ateliers.</li>
-        <li>Stratégie de recette, validation fonctionnelle, suivi budgétaire.</li>
-      </ul>
-    </div>
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700">TRANSACTIS / Société Générale – SCT Instant Payment (2021 – 2024)</h3>
-      <p class="text-gray-700"><strong>Rôle :</strong> Business Analyst – Paiements SEPA instantanés</p>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>Pilotage des évolutions fonctionnelles de la plateforme Instant Payment.</li>
-        <li>Cadrage, spécifications, recette, support RUN.</li>
-        <li>Coordination des intervenants internes et externes.</li>
-      </ul>
-    </div>
+    h1 {
+      color: #0a3d62;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
 
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700">Banque de France – Surendettement / OPTIC (2018 – 2020)</h3>
-      <p class="text-gray-700"><strong>Rôles :</strong> Expert Recette Fonctionnelle / Chef de projet Monétique</p>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>Application de gestion du surendettement (SUREN2), système OPTIC.</li>
-        <li>Tests via Squash, rédaction CCTP, pilotage recette REPIM.</li>
-      </ul>
-    </div>
+    p.subtitle {
+      color: #555;
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
 
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700">POSTEBANK Gabon – Intégration SI & Monétique (2013 – 2018)</h3>
-      <p class="text-gray-700"><strong>Rôles :</strong> Chef de projet SI bancaire & Monétique</p>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>Déploiement système bancaire (Carthago / BFI), solution monétique privative.</li>
-        <li>Services : cartes biométriques, eBanking, Cash Management, AML, etc.</li>
-        <li>Formation, accompagnement post-production.</li>
-      </ul>
-    </div>
+    section {
+      margin-bottom: 2rem;
+    }
 
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700">BEAC / SMAC – Interbancarité CEMAC (2008 – 2012)</h3>
-      <p class="text-gray-700"><strong>Rôles :</strong> Expert Fonctionnel Monétique / Chef de projet Certification</p>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>Projet GIMAC : interbancarité régionale, traitement centralisé.</li>
-        <li>Cahiers des charges, certifications VISA, PCI-DSS, homologations BEAC.</li>
-      </ul>
-    </div>
+    h2 {
+      color: #0a3d62;
+      border-bottom: 2px solid #0a3d62;
+      padding-bottom: 0.25rem;
+    }
 
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700">NATEXIS / MONEYLINE – Monétique en France (2005 – 2008)</h3>
-      <p class="text-gray-700"><strong>Rôles :</strong> Consultant Monétique – Emission & Acquisition</p>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>Assistance sur SAE HSBC, PRA/PNA, TPE EMV.</li>
-        <li>Projets de migration, déploiement LSB sur GAB/DAB.</li>
-      </ul>
-    </div>
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .client-name {
+      font-weight: bold;
+      color: #1e3799;
+    }
+
+    .project-title {
+      font-style: italic;
+      color: #4a69bd;
+    }
+
+    a {
+      color: #0a3d62;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Filigrane (watermark) -->
+  <div class="watermark">
+    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
   </div>
 
-  <div class="mt-12">
-    <h3 class="text-2xl font-bold text-gray-800 mb-4">✅ Domaines d'intervention couverts</h3>
-    <ul class="list-disc list-inside text-gray-700">
-      <li>Moyens de paiement européens (SEPA, SCT-Instant, EPI WERO)</li>
-      <li>Monétique (émission, acquisition, acceptation, compensation)</li>
-      <li>Systèmes bancaires globaux (SI intégrés, modules métiers)</li>
-      <li>Recette fonctionnelle & stratégie de tests</li>
-      <li>Conformité réglementaire & certifications (EMV, PCI-DSS)</li>
+  <header>
+    <h1>Références & Réalisations</h1>
+    <p class="subtitle">Expertise en systèmes de paiement, monétique et conseil IT</p>
+  </header>
+
+  <section>
+    <h2>Clients & Missions</h2>
+    <ul>
+      <li>
+        <span class="client-name">BPCE / Natixis Payment Solutions</span> – <span class="project-title">Support aux équipes projets monétiques</span><br />
+        Coordination des projets d’évolution fonctionnelle et réglementaire sur les produits de paiement. Rédaction des spécifications, suivi des développements, recettes et mise en production.
+      </li>
+      <li>
+        <span class="client-name">La Banque Postale</span> – <span class="project-title">Pilotage opérationnel des projets de paiement SEPA</span><br />
+        Suivi des évolutions du système d’information sur les moyens de paiement SEPA (virements, prélèvements, échanges interbancaires).
+      </li>
+      <li>
+        <span class="client-name">Société Générale</span> – <span class="project-title">Analyse et validation des flux monétiques</span><br />
+        Analyse des flux de paiement, validation des journaux de transaction et vérification des conformités règlementaires.
+      </li>
+      <li>
+        <span class="client-name">Groupe ATOS / Wordline</span> – <span class="project-title">Assistance à la migration de plateformes monétiques</span><br />
+        Migration de systèmes de gestion de cartes et de terminaux. Qualification des flux ISO 8583, tests de conformité et mise en œuvre de solutions techniques.
+      </li>
     </ul>
-  </div>
-</section>
+  </section>
+
+  <section>
+    <h2>Expertise Clé</h2>
+    <ul>
+      <li>Gestion de projets IT dans le secteur bancaire et paiement</li>
+      <li>Connaissance approfondie des protocoles monétiques (CB, ISO 8583, SEPA)</li>
+      <li>Maîtrise des outils de recette, qualification et validation fonctionnelle</li>
+      <li>Accompagnement à la transformation digitale des systèmes de paiement</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Zone d’intervention</h2>
+    <p>France – Afrique centrale (Gabon, Congo, Cameroun)</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      NP-SOLUTIONS<br />
+      Tél : +33 772 05 98 74<br />
+      Email : <a href="mailto:npongui@gmail.com">npongui@gmail.com</a>
+    </p>
+  </section>
+</body>
+</html>
+
 
