@@ -5,39 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NP-SOLUTIONS | Qui sommes-nous ?</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
       margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
       background: #f8f9fa;
       color: #333;
-      position: relative;
       overflow-x: hidden;
     }
 
     .watermark {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       height: 100vh;
-      z-index: 0;
-      opacity: 0.03;
+      z-index: -1;
+      opacity: 0.05;
       pointer-events: none;
+      overflow: hidden;
     }
 
     .watermark img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     header {
-      position: relative;
       background: #003366;
       color: #fff;
       text-align: center;
       padding: 30px 20px;
-      z-index: 1;
     }
 
     nav {
@@ -45,8 +44,6 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
     }
 
     nav a {
@@ -64,19 +61,17 @@
     }
 
     .container {
-      position: relative;
-      z-index: 1;
       max-width: 960px;
       margin: 40px auto;
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h2 {
       color: #003366;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     ul {
@@ -96,8 +91,6 @@
       font-size: 0.9em;
       color: #666;
       margin-top: 40px;
-      position: relative;
-      z-index: 1;
     }
 
     a {
@@ -131,6 +124,7 @@
     <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
     <a href="tarifaire.html">Grille Tarifaire</a>
     <a href="contact.html">CONTACT</a>
+    <a href="demande-devis.html">Demande de contact ou de devis</a>
     <a href="references.html">Références</a>
   </nav>
 
