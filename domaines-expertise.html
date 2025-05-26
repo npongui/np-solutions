@@ -10,122 +10,134 @@
       margin: 0;
       background: #f8f9fa;
       color: #333;
-      position: relative;
     }
-
-    .watermark {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.05;
-      pointer-events: none;
+    header {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
     }
-
-    .watermark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      border-bottom: 3px solid #f39c12;
+    }
     .container {
       max-width: 960px;
       margin: 40px auto;
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    h2 {
-      color: #003366;
-      margin-top: 40px;
-    }
-
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-
     th, td {
       padding: 12px;
       border: 1px solid #ccc;
       text-align: left;
     }
-
     th {
       background-color: #e9ecef;
     }
-
     footer {
-      background: #f1f1f1;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 40px;
+      background:#f1f1f1;
+      text-align:center;
+      padding:20px;
+      font-size:0.9em;
+      color:#666;
+      margin-top:40px;
     }
-
     a {
       color: #003366;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
+    }
+    .watermark {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .watermark img {
+      width: 100%; height: 100%;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
 
-  <!-- Filigrane -->
-  <div class="watermark">
-    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
-  </div>
+<div class="watermark">
+  <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
+</div>
 
-  <!-- En-tête chargé dynamiquement -->
-  <div id="header-container"></div>
+<header>
+  <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;" />
+  <h1>NP-SOLUTIONS</h1>
+  <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
+  <p>📍 Île-de-France – France entière - Afrique</p>
+</header>
 
-  <div class="container">
-    <h2>🔎 Nos domaines d’expertise</h2>
-    <table>
-      <tr><th>Nos domaines d’expertise</th><th>Prestations</th></tr>
-      <tr>
-        <td>🔧 Conseil & Maîtrise d’Ouvrage</td>
-        <td>
-          • Cadrage de besoins et analyse fonctionnelle<br/>
-          • Rédaction de cahiers des charges<br/>
-          • Conduite de projets IT (cycle en V, Agile)<br/>
-          • Pilotage MOA & coordination
-        </td>
-      </tr>
-      <tr>
-        <td>💳 Systèmes & Moyens de Paiement</td>
-        <td>
-          • Intégration SEPA, carte, wallet, virement instantané<br/>
-          • Open banking / DSP2 / API & connecteurs<br/>
-          • Projets ISO 20022 / migration CORE / SWITCH
-        </td>
-      </tr>
-    </table>
-  </div>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+  <a href="domaines-expertise.html" class="active">Nos domaines d’expertise</a>
+  <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
+  <a href="tarifaire.html">Grille Tarifaire</a>
+  <a href="contact.html">CONTACT</a>
+  <a href="references.html">Références</a>
+</nav>
 
-  <!-- Pied de page chargé dynamiquement -->
-  <div id="footer-container"></div>
+<div class="container">
+  <h2>🔎 Nos domaines d’expertise</h2>
+  <table>
+    <tr><th>Nos domaines d’expertise</th><th>Prestations</th></tr>
+    <tr>
+      <td>🔧 Conseil & Maîtrise d’Ouvrage</td>
+      <td>
+        • Cadrage de besoins et analyse fonctionnelle<br/>
+        • Rédaction de cahiers des charges<br/>
+        • Conduite de projets IT (cycle en V, Agile)<br/>
+        • Pilotage MOA & coordination
+      </td>
+    </tr>
+    <tr>
+      <td>💳 Systèmes & Moyens de Paiement</td>
+      <td>
+        • Intégration SEPA, carte, wallet, virement instantané<br/>
+        • Open banking / DSP2 / API & connecteurs<br/>
+        • Projets ISO 20022 / migration CORE / SWITCH
+      </td>
+    </tr>
+  </table>
+</div>
 
-  <script>
-    // Chargement du header et du footer
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header-container').innerHTML = data);
-
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data);
-  </script>
+<footer>
+  <a href="mentions-legales.html">Mentions Légales</a> | 
+  <a href="blog.html">Blog</a> | 
+  <a href="references.html">Références</a>
+  <br/>
+  &copy; 2025 NP-SOLUTIONS – Tous droits réservés
+</footer>
 
 </body>
 </html>
