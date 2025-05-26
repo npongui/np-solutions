@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NP-SOLUTIONS | Qui sommes-nous ?</title>
+  <title>NP-SOLUTIONS | Qui sommes-nous</title>
   <style>
+    /* CSS commun */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -30,6 +31,34 @@
       object-fit: contain;
     }
 
+    header {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-bottom: 3px solid #f39c12;
+    }
+
     .container {
       max-width: 960px;
       margin: 40px auto;
@@ -44,14 +73,12 @@
       margin-top: 40px;
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+    p, ul {
+      margin-bottom: 15px;
     }
 
-    li::before {
-      content: "✔️ ";
-      margin-right: 6px;
+    ul {
+      padding-left: 20px;
     }
 
     footer {
@@ -75,37 +102,54 @@
 </head>
 <body>
 
-  <!-- Filigrane -->
   <div class="watermark">
     <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
   </div>
 
-  <!-- En-tête chargé dynamiquement -->
-  <div id="header-container"></div>
+  <header>
+    <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;" />
+    <h1>NP-SOLUTIONS</h1>
+    <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
+    <p>📍 Île-de-France – France entière - Afrique</p>
+  </header>
 
-  <div class="container">
-    <h2>🔹 QUI SOMMES-NOUS ?</h2>
-    <p>NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="qui-sommes-nous.html" class="active">Qui sommes-nous</a>
+    <a href="domaines-expertise.html">Nos domaines d’expertise</a>
+    <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
+    <a href="tarifaire.html">Grille Tarifaire</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="references.html">Références</a>
+  </nav>
+
+  <main class="container">
+    <h2>Qui sommes-nous ?</h2>
+    <p>NP-SOLUTIONS est une SASU spécialisée dans le conseil et l’assistance en systèmes d’information, moyens de paiement, et gestion des données.</p>
+    <p>Fondée par Nazaire Pongui, expert en systèmes de paiement et transformation digitale, NP-SOLUTIONS met son savoir-faire au service de la performance numérique des entreprises, en France et en Afrique.</p>
+
+    <h3>Notre mission</h3>
+    <p>Accompagner nos clients dans la réussite de leurs projets IT en apportant des solutions adaptées, innovantes et sécurisées.</p>
+
+    <h3>Nos valeurs</h3>
     <ul>
-      <li>L’assistance à maîtrise d’ouvrage fonctionnelle</li>
-      <li>Les systèmes et moyens de paiement</li>
+      <li><strong>Expertise :</strong> Maîtrise technique et méthodologique approfondie.</li>
+      <li><strong>Proximité :</strong> Relation client personnalisée et écoute attentive.</li>
+      <li><strong>Engagement :</strong> Respect des délais et qualité des prestations.</li>
+      <li><strong>Innovation :</strong> Veille technologique pour des solutions modernes.</li>
     </ul>
-    <p><strong>🎯 Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.</p>
-  </div>
 
-  <!-- Pied de page chargé dynamiquement -->
-  <div id="footer-container"></div>
+    <h3>Notre équipe</h3>
+    <p>Une équipe à taille humaine, réactive et passionnée, centrée sur la réussite de vos projets.</p>
+  </main>
 
-  <script>
-    // Chargement du header et du footer
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header-container').innerHTML = data);
-
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer-container').innerHTML = data);
-  </script>
+  <footer>
+    <a href="mentions-legales.html">Mentions Légales</a> | 
+    <a href="blog.html">Blog</a> | 
+    <a href="references.html">Références</a>
+    <br/>
+    &copy; 2025 NP-SOLUTIONS – Tous droits réservés
+  </footer>
 
 </body>
 </html>
