@@ -72,6 +72,32 @@
     a:hover {
       text-decoration: underline;
     }
+    form {
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00509e;
+    }
   </style>
 </head>
 <body>
@@ -84,95 +110,107 @@
 
   <div class="container">
     <h2>🔹 QUI SOMMES-NOUS ?</h2>
-    <p>
-      NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :<br>
-      • L’assistance à maîtrise d’ouvrage fonctionnelle<br>
-      • Les systèmes et moyens de paiement
-    </p>
-    <p>
-      🎯 <strong>Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.
-    </p>
+    <p>NP-SOLUTIONS est une société de conseil indépendante basée en France, spécialisée dans :</p>
+    <ul>
+      <li>L’assistance à maîtrise d’ouvrage fonctionnelle</li>
+      <li>Les systèmes et moyens de paiement</li>
+    </ul>
+    <p><strong>🎯 Notre mission :</strong> Accompagner les entreprises françaises et les directions métiers et DSI dans leurs projets digitaux, d’intégration de solutions de paiement et de pilotage fonctionnel des systèmes d’information, avec agilité, conformité et orientation résultats.</p>
 
     <h2>🔎 Nos domaines d’expertise</h2>
-    <h3>🔧 Conseil & Maîtrise d’Ouvrage</h3>
-    <ul>
-      <li>Cadrage de besoins et analyse fonctionnelle</li>
-      <li>Rédaction de cahiers des charges</li>
-      <li>Conduite de projets IT (cycle en V, Agile)</li>
-      <li>Pilotage MOA & coordination</li>
-    </ul>
+    <table>
+      <tr><th>Nos domaines d’expertise</th><th>Prestations</th></tr>
+      <tr>
+        <td>🔧 Conseil & Maîtrise d’Ouvrage</td>
+        <td>
+          • Cadrage de besoins et analyse fonctionnelle<br/>
+          • Rédaction de cahiers des charges<br/>
+          • Conduite de projets IT (cycle en V, Agile)<br/>
+          • Pilotage MOA & coordination
+        </td>
+      </tr>
+      <tr>
+        <td>💳 Systèmes & Moyens de Paiement</td>
+        <td>
+          • Intégration SEPA, carte, wallet, virement instantané<br/>
+          • Open banking / DSP2 / API & connecteurs<br/>
+          • Projets ISO 20022 / migration CORE / SWITCH
+        </td>
+      </tr>
+    </table>
 
-    <h3>💳 Systèmes & Moyens de Paiement</h3>
+    <h2>✅ Notre valeur ajoutée</h2>
     <ul>
-      <li>Intégration SEPA, carte, wallet, virement instantané</li>
-      <li>Open banking / DSP2 / API & connecteurs</li>
-      <li>Projets ISO 20022 / migration CORE / SWITCH</li>
-    </ul>
-
-    <h2>Notre valeur ajoutée</h2>
-    <ul>
-      <li>✅ Double expertise métier & IT</li>
-      <li>✅ Expérience grands comptes & ETI (secteurs : finance, télécoms, services)</li>
-      <li>✅ Capacité à s’adapter à vos méthodes : Agile, V-cycle</li>
-      <li>✅ Souplesse d’intervention : mission courte, régie, forfait</li>
-      <li>✅ Tarification transparente et compétitive</li>
+      <li>Double expertise métier & IT</li>
+      <li>Expérience grands comptes & ETI (finance, télécoms, services)</li>
+      <li>Adaptabilité aux méthodes Agile ou V-cycle</li>
+      <li>Souplesse d’intervention : mission courte, régie, forfait</li>
+      <li>Tarification transparente et compétitive</li>
     </ul>
 
     <h2>🧾 Grille Tarifaire – NP-SOLUTIONS</h2>
-    <p>Valable pour les prestations en France métropolitaine</p>
+    <p><em>Valable pour les prestations en France métropolitaine</em></p>
     <table>
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Détail</th>
-          <th>Tarif indicatif</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🔧 Conseil & AMOA</td>
-          <td>Analyse du besoin, étude d’impact, rédaction de cahiers des charges, pilotage MOA</td>
-          <td>600 à 750 € / jour HT</td>
-        </tr>
-        <tr>
-          <td>Gestion de projet</td>
-          <td>Cycle en V, Agile</td>
-          <td>À partir de 700 € / jour</td>
-        </tr>
-        <tr>
-          <td>💳 Moyens de paiement</td>
-          <td>Cadrage et intégration SEPA, carte, wallet, open banking, ISO 20022</td>
-          <td>700 à 850 € / jour HT</td>
-        </tr>
-        <tr>
-          <td>Assistance monétique</td>
-          <td>Migration ou interfaçage SI monétique et moyens de paiement</td>
-          <td>700 à 800 € / jour HT</td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>Service</th><th>Détail</th><th>Tarif indicatif</th>
+      </tr>
+      <tr>
+        <td>🔧 Conseil & AMOA</td>
+        <td>Analyse du besoin, rédaction de spécifications, pilotage MOA</td>
+        <td>600 à 750 € / jour HT</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Gestion de projet (Agile, V-Cycle)</td>
+        <td>À partir de 700 € / jour</td>
+      </tr>
+      <tr>
+        <td>💳 Moyens de paiement</td>
+        <td>Cadrage, intégration SEPA/carte/wallet, open banking</td>
+        <td>700 à 850 € / jour HT</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Assistance migration / interfaçage SI monétique</td>
+        <td>700 à 800 € / jour HT</td>
+      </tr>
     </table>
 
     <h2>📝 Conditions générales France</h2>
     <ul>
-      <li>• Tarifs HT – Facturation mensuelle ou à la mission</li>
-      <li>• Proposition sur-mesure avec livrables et planification</li>
-      <li>• Frais de déplacement inclus pour Île-de-France (en sus ailleurs)</li>
-      <li>• Engagements à partir de 3 jours facturables</li>
-      <li>• Réductions possibles pour engagement > 30 jours ou mission pluri-service</li>
-      <li>• Assurance RC pro incluse dans chaque prestation</li>
-      <li>• Intervention rapide sur site ou à distance, en toute autonomie</li>
+      <li>Tarifs HT – Facturation mensuelle ou à la mission</li>
+      <li>Proposition sur-mesure avec livrables et planning</li>
+      <li>Frais inclus pour l’Île-de-France (en sus ailleurs)</li>
+      <li>Engagement minimum : 3 jours facturables</li>
+      <li>Réductions dès 20 jours ou mission pluri-service</li>
+      <li>Assurance RC Pro incluse</li>
+      <li>Intervention rapide sur site ou à distance</li>
     </ul>
-    <p><strong>Devis sous 48h – Engagement minimum de 3 jours – Réductions dès 20 jours</strong></p>
 
     <h2>📍 CONTACT</h2>
     <p>
       <strong>NP-SOLUTIONS</strong><br/>
       📧 <a href="mailto:npongui@gmail.com">npongui@gmail.com</a><br/>
       📞 <a href="tel:+33772059874">+33 772 05 98 74</a><br/>
+      🌐 <a href="https://npongui.github.io/np-solutions/" target="_blank">npongui.github.io/np-solutions</a><br/>
       📍 Intervention : Île-de-France et régions<br/>
       📄 Statut : SASU – Conseil & expertise IT<br/>
       🛡️ RC Pro : incluse dans toutes nos prestations
     </p>
+
+    <h2>📬 Demande de contact ou de devis</h2>
+    <form action="https://formsubmit.co/npongui@gmail.com" method="POST">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="Nom" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="message">Votre message</label>
+      <textarea id="message" name="Message" rows="6" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
   </div>
 
   <footer>
