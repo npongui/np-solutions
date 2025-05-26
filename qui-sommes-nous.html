@@ -8,35 +8,60 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f8f9fa url('logo-nps.png') no-repeat center center fixed;
-      background-size: 300px;
-      background-blend-mode: lighten;
+      background: #f8f9fa;
       color: #333;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url('logo-nps.png') no-repeat center center;
+      background-size: 300px;
+      opacity: 0.05;
+      width: 300px;
+      height: 300px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     header {
       background: #003366;
       color: #fff;
       text-align: center;
       padding: 30px 20px;
+      position: relative;
+      z-index: 1;
     }
+
     nav {
       background-color: #003366;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       padding: 15px 18px;
       font-weight: bold;
     }
+
     nav a:hover {
       border-bottom: 3px solid #f39c12;
     }
+
     nav a.active {
       border-bottom: 3px solid #f39c12;
     }
+
     .container {
       max-width: 960px;
       margin: 40px auto;
@@ -44,19 +69,25 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
+
     h2 {
       color: #003366;
       margin-top: 40px;
     }
+
     ul {
       list-style-type: none;
       padding-left: 0;
     }
+
     li::before {
       content: "✔️ ";
       margin-right: 6px;
     }
+
     footer {
       background: #f1f1f1;
       text-align: center;
@@ -64,11 +95,15 @@
       font-size: 0.9em;
       color: #666;
       margin-top: 40px;
+      position: relative;
+      z-index: 1;
     }
+
     a {
       color: #003366;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
