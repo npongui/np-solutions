@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NP-SOLUTIONS | Accueil</title>
   <style>
-    /* CSS commun */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -66,19 +65,32 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    h2 {
+    h1, h2 {
       color: #003366;
-      margin-top: 40px;
     }
 
-    p, ul {
-      margin-bottom: 15px;
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      line-height: 1.5em;
     }
 
-    ul {
-      padding-left: 20px;
+    a.button-link {
+      display: inline-block;
+      background-color: #f39c12;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    a.button-link:hover {
+      background-color: #d17d0a;
     }
 
     footer {
@@ -102,8 +114,9 @@
 </head>
 <body>
 
+  <!-- Filigrane -->
   <div class="watermark">
-    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo">
+    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo" />
   </div>
 
   <header>
@@ -123,27 +136,22 @@
     <a href="references.html">Références</a>
   </nav>
 
-  <main class="container">
+  <div class="container">
     <h2>Bienvenue chez NP-SOLUTIONS</h2>
-    <p>NP-SOLUTIONS vous accompagne dans votre transformation numérique grâce à son expertise en conseil IT, systèmes de paiement, et gestion des données.</p>
-    <p>Nous intervenons en Île-de-France, sur tout le territoire français, ainsi qu’en Afrique.</p>
+    <p>Conseil & Expertise IT au service de la performance numérique des entreprises, en France et en Afrique.</p>
 
-    <h3>Nos engagements :</h3>
-    <ul>
-      <li>Approche personnalisée adaptée à vos besoins</li>
-      <li>Solutions innovantes et sécurisées</li>
-      <li>Accompagnement au long terme pour la réussite de vos projets</li>
-    </ul>
-
-    <h3>Découvrez nos domaines d’expertise et nos offres de services.</h3>
-    <p>Explorez le menu pour en savoir plus sur ce que NP-SOLUTIONS peut vous apporter.</p>
-  </main>
+    <p>
+      <a href="contact.html" class="button-link" aria-label="Demander un contact ou un devis">
+        Demander un contact ou un devis
+      </a>
+    </p>
+  </div>
 
   <footer>
     <a href="mentions-legales.html">Mentions Légales</a> | 
     <a href="blog.html">Blog</a> | 
     <a href="references.html">Références</a>
-    <br/>
+    <br />
     &copy; 2025 NP-SOLUTIONS – Tous droits réservés
   </footer>
 
