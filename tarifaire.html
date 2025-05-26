@@ -90,6 +90,7 @@
       padding: 12px;
       border: 1px solid #ccc;
       text-align: left;
+      vertical-align: top;
     }
 
     th {
@@ -160,26 +161,63 @@
     <h2>📊 Grille Tarifaire</h2>
 
     <table>
-      <tr>
-        <th>Prestations</th>
-        <th>Tarif horaire (HT)</th>
-      </tr>
-      <tr>
-        <td>Conseil & Maîtrise d’Ouvrage</td>
-        <td>90 € / heure</td>
-      </tr>
-      <tr>
-        <td>Consultant Systèmes & Paiement</td>
-        <td>100 € / heure</td>
-      </tr>
-      <tr>
-        <td>Chef de projet IT & Pilotage</td>
-        <td>110 € / heure</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Prestations</th>
+          <th>Description</th>
+          <th>TJM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MOA Paiement</td>
+          <td>
+            <ul>
+              <li>Rédaction des spécifications fonctionnelles détaillées</li>
+              <li>Cadrage et Analyse des besoins métier</li>
+              <li>Suivi de recette, gestion de backlog</li>
+            </ul>
+          </td>
+          <td>700 €</td>
+        </tr>
+        <tr>
+          <td>Intégration Systèmes et moyens de paiement</td>
+          <td>
+            <ul>
+              <li>Assistance recette d’intégration fonctionnelle unitaire et générale</li>
+              <li>Tests fonctionnels</li>
+              <li>Coordination recette</li>
+              <li>Stratégie de recette</li>
+            </ul>
+          </td>
+          <td>700 €</td>
+        </tr>
+        <tr>
+          <td>Assistance RUN</td>
+          <td>
+            <ul>
+              <li>Support de niveau 2</li>
+              <li>Gestion des incidents</li>
+            </ul>
+          </td>
+          <td>650 €</td>
+        </tr>
+        <tr>
+          <td>Gestion de projet IT</td>
+          <td>
+            <ul>
+              <li>Pilotage de projets IT</li>
+              <li>Animation des ateliers fonctionnels</li>
+            </ul>
+          </td>
+          <td>800 €</td>
+        </tr>
+      </tbody>
     </table>
 
     <p class="note">* Tarifs indicatifs, négociables selon durée et volume de mission.</p>
-   
+    <p class="note">* Conditions générales applicables en France.</p>
+
     <h3>📝 Conditions générales France :</h3>
     <ul class="conditions">
       <li>Tarifs HT – Facturation mensuelle ou à la mission</li>
