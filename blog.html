@@ -2,43 +2,161 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Blog - NP-SOLUTIONS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NP-SOLUTIONS | Blog</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f8f9fa; color: #333; }
-    h1 { color: #003366; }
-    article { background: white; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-    h2 { margin-top: 0; }
-    time { color: #666; font-size: 0.9em; }
-    a { color: #003366; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer { text-align: center; margin-top: 40px; color: #666; font-size: 0.9em; }
-    nav { margin-bottom: 30px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #333;
+      position: relative;
+    }
+
+    .watermark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    header {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-bottom: 3px solid #f39c12;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #003366;
+    }
+
+    article {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    article h2 {
+      margin-top: 0;
+    }
+
+    time {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 40px;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">← Accueil</a> | 
-    <a href="references.html">Références</a> | 
-    <a href="mentions-legales.html">Mentions Légales</a>
-  </nav>
 
-  <h1>Blog NP-SOLUTIONS</h1>
+  <!-- Filigrane -->
+  <div class="watermark">
+    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo" />
+  </div>
 
-  <article>
-    <h2>Bienvenue sur notre blog !</h2>
-    <time datetime="2025-05-26">26 mai 2025</time>
-    <p>Ce blog est dédié à l’actualité des systèmes de paiement, transformation digitale et gestion IT.</p>
-  </article>
+  <!-- Conteneur pour header + nav -->
+  <div id="header-container"></div>
 
-  <article>
-    <h2>Comment intégrer les API de paiement dans vos projets ?</h2>
-    <time datetime="2025-05-20">20 mai 2025</time>
-    <p>Découvrez les bonnes pratiques pour intégrer rapidement les modules de paiement sécurisés dans vos applications.</p>
-  </article>
+  <!-- Contenu principal -->
+  <div class="container">
+    <h2>📝 Blog NP-SOLUTIONS</h2>
 
-  <footer>
-    &copy; 2025 NP-SOLUTIONS – Tous droits réservés
-  </footer>
+    <article>
+      <h2>Bienvenue sur notre blog !</h2>
+      <time datetime="2025-05-26">26 mai 2025</time>
+      <p>Ce blog est dédié à l’actualité des systèmes de paiement, transformation digitale et gestion IT.</p>
+    </article>
+
+    <article>
+      <h2>Comment intégrer les API de paiement dans vos projets ?</h2>
+      <time datetime="2025-05-20">20 mai 2025</time>
+      <p>Découvrez les bonnes pratiques pour intégrer rapidement les modules de paiement sécurisés dans vos applications.</p>
+    </article>
+  </div>
+
+  <!-- Conteneur pour footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Fonction pour charger un fichier HTML dans un container
+    function loadHTML(containerId, url) {
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Erreur réseau');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById(containerId).innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Erreur chargement HTML:', error);
+        });
+    }
+
+    // Charger header + nav, et footer
+    loadHTML('header-container', 'header.html');
+    loadHTML('footer-container', 'footer.html');
+  </script>
+
 </body>
 </html>
-
