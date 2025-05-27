@@ -2,23 +2,149 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Mentions Légales - NP-SOLUTIONS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NP-SOLUTIONS | Mentions Légales</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-    h1 { color: #003366; }
-    a { color: #003366; text-decoration: none; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #333;
+      position: relative;
+    }
+
+    .watermark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    header {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 18px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-bottom: 3px solid #f39c12;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #003366;
+      margin-top: 40px;
+    }
+
+    p, ul {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 40px;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Mentions Légales</h1>
-  <p>NP-SOLUTIONS SASU<br/>
-    Société de Conseil & Expertise IT en Monétique et Moyens de paiement<br/> 
+
+  <!-- Filigrane -->
+  <div class="watermark">
+    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo" />
+  </div>
+
+  <!-- Conteneur pour header + nav -->
+  <div id="header-container"></div>
+
+  <!-- Contenu principal -->
+  <div class="container">
+    <h2>📄 Mentions Légales</h2>
+    <p><strong>NP-SOLUTIONS SASU</strong><br/>
+    Société de Conseil & Expertise IT en Monétique et Moyens de Paiement<br/>
     Siège social : 1, Allée Albertine Sarrazin, 94450 Limeil-Brévannes, Île-de-France, France<br/>
-     Email : <a href="mailto:nazaire.pongui@np-solutions.eu">contact@np-solutions.eu</a><br/>
-     Téléphone : +33 772 05 98 74<br/>
-     RC Pro incluse
-  </p>
-  <p><a href="index.html">← Retour à l'accueil</a></p>
+    Email : <a href="mailto:contact@np-solutions.eu">contact@np-solutions.eu</a><br/>
+    Téléphone : +33 7 72 05 98 74<br/>
+    RC Pro incluse
+    </p>
+    <p><a href="index.html">← Retour à l'accueil</a></p>
+  </div>
+
+  <!-- Conteneur pour footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Fonction pour charger un fichier HTML dans un container
+    function loadHTML(containerId, url) {
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Erreur réseau');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById(containerId).innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Erreur chargement HTML:', error);
+        });
+    }
+
+    // Charger header + nav, et footer
+    loadHTML('header-container', 'header.html');
+    loadHTML('footer-container', 'footer.html');
+  </script>
+
 </body>
 </html>
-
