@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NP-SOLUTIONS | Blog</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>NP-SOLUTIONS | Blog</title>
+<style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -108,58 +109,45 @@
   </style>
 </head>
 <body>
+<!-- Filigrane -->
+<div class="watermark">
+<img alt="NP-SOLUTIONS Logo" src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true"/>
+</div>
+<!-- Conteneur pour header + nav -->
+<div id="header-container"></div>
+<!-- Contenu principal -->
+<div class="container">
+<h2>📝 Blog NP-SOLUTIONS</h2>
 
-  <!-- Filigrane -->
-  <div class="watermark">
-    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo" />
-  </div>
+<article>
+<h2>Flash actu – Semaine du 27 mai 2025</h2>
+<time datetime="2025-05-28">28 mai 2025</time>
+<p>
+<strong>1️⃣ La Banque de France annonce des expérimentations locales autour de l’€uro numérique</strong><br/>
+    ➡️ Tests prévus sur les paiements inter-entreprises et l’usage B2C.<br/>
+    🔗 Source : <a href="https://www.banque-france.fr/fr/leuro-numerique-pour-une-plus-grande-autonomie-strategique-europeenne" target="_blank">Banque de France – L’euro numérique</a>
+</p>
+<p>
+<strong>2️⃣ L’ABE finalise les guidelines de conformité DSP3</strong><br/>
+    🛡️ Priorité à la transparence sur l’authentification forte (SCA) et la gestion des permissions dans les wallets.<br/>
+    🔗 Source : <a href="https://www.nuvei.com/fr/posts/psd3-compliance-guide" target="_blank">Nuvei – Guide DSP3</a>
+</p>
+<p>
+<strong>3️⃣ Mastercard accélère sur le “Tokenisation-as-a-Service” pour les marchands européens</strong><br/>
+    🔒 Une réponse directe à l’essor du commerce omnicanal.<br/>
+    🔗 Source : <a href="https://www.mastercard.com/news/press/2024/june/mastercard-reimagines-online-checkout-commits-to-reaching-100-e-commerce-tokenization-by-2030-in-europe/" target="_blank">Mastercard – 100% Tokenisation</a>
+</p>
+</article>
 
-  <!-- Conteneur pour header + nav -->
-  <div id="header-container"></div>
-
-  <!-- Contenu principal -->
-  <div class="container">
-    <h2>📝 Blog NP-SOLUTIONS</h2>
-
-    <article>
-      <h2>Bienvenue sur notre blog !</h2>
-      <time datetime="2025-05-26">26 mai 2025</time>
-      <p>Ce blog est dédié à l’actualité des systèmes de paiement, transformation digitale et gestion IT.</p>
-    </article>
-
-    <article>
-      <h2>Comment intégrer les API de paiement dans vos projets ?</h2>
-      <time datetime="2025-05-20">20 mai 2025</time>
-      <p>Découvrez les bonnes pratiques pour intégrer rapidement les modules de paiement sécurisés dans vos applications.</p>
-    </article>
-
-    <article>
-      <h2>Flash actu – Semaine du 27 mai 2025</h2>
-      <time datetime="2025-05-28">28 mai 2025</time>
-      <p>
-        1️⃣ La Banque de France annonce des expérimentations locales autour de l’€uro numérique
-➡️ Tests prévus sur les paiements inter-entreprises et l’usage B2C.
-🔗 Source : Banque de France – L’euro numérique pour une plus grande autonomie stratégique européenne
-👉 https://www.banque-france.fr/fr/leuro-numerique-pour-une-plus-grande-autonomie-strategique-europeenne
-
-2️⃣ L’ABE finalise les guidelines de conformité DSP3
-🛡️ Priorité à la transparence sur l’authentification forte (SCA) et la gestion des permissions dans les wallets.
-🔗 Source : Nuvei – Guide sur la conformité à la DSP3
-👉 https://www.nuvei.com/fr/posts/psd3-compliance-guide
-
-3️⃣ Mastercard accélère sur le “Tokenisation-as-a-Service” pour les marchands européens
-🔒 Une réponse directe à l’essor du commerce omnicanal.
-🔗 Source : Mastercard – Reimagining checkout & 100% tokenisation d’ici 2030
-👉 https://www.mastercard.com/news/press/2024/june/mastercard-reimagines-online-checkout-commits-to-reaching-100-e-commerce-tokenization-by-2030-in-europe/
-      </p>
-    </article>
-    
-  </div>
-
-  <!-- Conteneur pour footer -->
-  <div id="footer-container"></div>
-
-  <script>
+<article>
+<h2>Comment intégrer les API de paiement dans vos projets ?</h2>
+<time datetime="2025-05-20">20 mai 2025</time>
+<p>Découvrez les bonnes pratiques pour intégrer rapidement les modules de paiement sécurisés dans vos applications.</p>
+</article>
+</div>
+<!-- Conteneur pour footer -->
+<div id="footer-container"></div>
+<script>
     // Fonction pour charger un fichier HTML dans un container
     function loadHTML(containerId, url) {
       fetch(url)
@@ -179,6 +167,5 @@
     loadHTML('header-container', 'header.html');
     loadHTML('footer-container', 'footer.html');
   </script>
-
 </body>
 </html>
