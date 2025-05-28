@@ -1,145 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NP-SOLUTIONS | Conseil & Expertise IT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NP-SOLUTIONS | Conseil & expertise en paiements</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f8f9fa;
+      font-family: Arial, sans-serif;
       color: #333;
-      position: relative;
     }
-
-    .watermark {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.05;
-      pointer-events: none;
-    }
-
-    .watermark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
     header {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    nav {
-      background-color: #003366;
+      background-color: #1e1e1e;
+      padding: 20px 40px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
-
+    header h1 {
+      color: #ffd700;
+      font-size: 24px;
+      margin: 0;
+    }
     nav a {
-      color: white;
+      color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      padding: 15px 18px;
-      font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s;
     }
-
-    nav a:hover,
-    nav a.active {
-      border-bottom: 3px solid #f39c12;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .hero {
+      background-color: #2a2a2a;
+      color: white;
+      padding: 60px 40px;
       text-align: center;
     }
-
-    h2 {
-      color: #003366;
+    .hero h2 {
+      font-size: 36px;
       margin-bottom: 20px;
     }
-
-    p {
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .cta-button {
-      background-color: #f39c12;
-      color: white;
-      padding: 12px 25px;
-      font-size: 1.1em;
+    .hero button {
+      background-color: #ffd700;
       border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
-      display: inline-block;
-      transition: background-color 0.3s;
     }
-
-    .cta-button:hover {
-      background-color: #e67e22;
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .expertises {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .expertise {
+      flex: 1;
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    footer {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Filigrane -->
-  <div class="watermark">
-    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo" />
-  </div>
-
   <header>
-    <img src="logo-nps.png" alt="Logo NP-SOLUTIONS" style="width:120px; margin-bottom:10px;" />
     <h1>NP-SOLUTIONS</h1>
-    <p>Conseil & Expertise IT au service de la performance numérique des entreprises</p>
-    <p>📍 Île-de-France – France entière - Afrique</p>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">À propos</a>
+      <a href="#">Expertises</a>
+      <a href="#">Références</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html" class="active">Accueil</a>
-    <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-    <a href="domaines-expertise.html">Nos domaines d’expertise</a>
-    <a href="valeur-ajoutee.html">Notre valeur ajoutée</a>
-    <a href="tarifaire.html">Grille Tarifaire</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="references.html">Références</a>
-  </nav>
-
-  <div class="container">
-    <h2>Bienvenue sur le site de NP-SOLUTIONS</h2>
-    <p>
-      Vous recherchez un partenaire de confiance pour vos projets numériques ?<br/>
-      NP-SOLUTIONS met à votre service son expertise en systèmes et moyens de paiement, maîtrise d’ouvrage, pilotage de projets, et transformation digitale.
-    </p>
-    <p>
-      Notre objectif : vous accompagner avec efficacité, indépendance et agilité pour accélérer la réussite de vos projets.
-    </p>
-    <a href="demande-devis.html" class="cta-button">Demande de contact ou de devis</a>
+  <div class="hero">
+    <h2>Conseil & expertise en systèmes et moyens de paiement</h2>
+    <button>Nous contacter</button>
   </div>
 
-  <footer style="background:#f1f1f1; text-align:center; padding:20px; font-size:0.9em; color:#666; margin-top:40px;">
-    <a href="mentions-legales.html">Mentions Légales</a> | 
-    <a href="blog.html">Blog</a> | 
-    <a href="references.html">Références</a>
-    <br/>
-    &copy; 2025 NP-SOLUTIONS – Tous droits réservés
-  </footer>
+  <section>
+    <h3>Qui sommes-nous ?</h3>
+    <p>NP-SOLUTIONS est un cabinet de conseil indépendant spécialisé dans les systèmes et moyens de paiement. Nous accompagnons les établissements financiers, DSI et directions financières dans leurs projets technologiques et réglementaires.</p>
+  </section>
 
+  <section>
+    <h3>Nos expertises</h3>
+    <div class="expertises">
+      <div class="expertise">
+        <h4>💳 Monétique & Paiements</h4>
+        <p>Optimisation des parcours de paiement, choix des solutions, conformité réglementaire.</p>
+      </div>
+      <div class="expertise">
+        <h4>📜 Conformité réglementaire</h4>
+        <p>Veille DSP3, SCA, RGPD, assistance à la mise en conformité opérationnelle.</p>
+      </div>
+      <div class="expertise">
+        <h4>🛠️ Digitalisation & Intégration SI</h4>
+        <p>Architecture fonctionnelle, interfaçage des systèmes de paiement, projets IT complexes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Derniers articles</h3>
+    <ul>
+      <li><strong>Flash actu</strong> : L’essentiel de la semaine dans les paiements</li>
+      <li><strong>Décryptage</strong> : DSP3 – Ce qui change pour les PSP</li>
+      <li><strong>Zoom techno</strong> : Comprendre la tokenisation des paiements</li>
+    </ul>
+  </section>
+
+  <footer>
+    NP-SOLUTIONS • +33 772 05 98 74 • npongui@gmail.com • LinkedIn | Facebook
+  </footer>
 </body>
 </html>
