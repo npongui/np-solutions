@@ -1,150 +1,158 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NP-SOLUTIONS | Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | NP-SOLUTIONS</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f8f9fa;
+      font-family: Arial, sans-serif;
       color: #333;
-      position: relative;
-    }
-
-    .watermark {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.05;
-      pointer-events: none;
-    }
-
-    .watermark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    header {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    nav {
-      background-color: #003366;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      min-height: 100vh;
     }
-
+    header {
+      background-color: #1e1e1e;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: #ffd700;
+      font-size: 24px;
+      margin: 0;
+    }
     nav a {
-      color: white;
+      color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      padding: 15px 18px;
-      font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s;
     }
-
-    nav a:hover,
-    nav a.active {
-      border-bottom: 3px solid #f39c12;
+    main {
+      flex: 1;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
     h2 {
-      color: #003366;
+      text-align: left;
+      color: #1e1e1e;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #1e1e1e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+    .confirmation {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 4px;
+      display: none;
+    }
+    .coordinates {
       margin-top: 40px;
+      font-size: 16px;
     }
-
-    p, ul {
-      margin-bottom: 15px;
+    .social-icons a {
+      margin: 0 10px;
+      color: #1e1e1e;
+      text-decoration: none;
+      font-size: 20px;
     }
-
-    ul {
-      padding-left: 20px;
+    iframe {
+      margin-top: 30px;
+      width: 100%;
+      height: 300px;
+      border: 0;
     }
-
     footer {
-      background: #f1f1f1;
+      background: #1e1e1e;
+      color: white;
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 40px;
-    }
-
-    a {
-      color: #003366;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Filigrane -->
-  <div class="watermark">
-    <img src="https://github.com/npongui/np-solutions/blob/main/logo-nps.png?raw=true" alt="NP-SOLUTIONS Logo" />
+  
+<header>
+  <div style="display: flex; align-items: center;">
+    <img src="logo-nps.jpg" alt="NP-SOLUTIONS Logo" style="height: 40px; margin-right: 15px;">
+    <h1 style="color: #ffd700; font-size: 24px; margin: 0;">NP-SOLUTIONS</h1>
   </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="expertises.html">Expertises</a>
+    <a href="references.html">Références</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- Conteneur pour header + nav -->
-  <div id="header-container"></div>
 
-  <div class="container">
-    <h2>📞 Contactez-nous</h2>
-    <p><strong>NP-SOLUTIONS SASU</strong></p>
-    <ul>
-      <li><strong>Téléphone :</strong> +33 7 72 05 98 74</li>
-      <li><strong>Email :</strong> <a href="mailto:contact@np-solutions.eu">contact@np-solutions.eu</a></li>
-      <li><strong>Localisation :</strong> Île-de-France, France</li>
-    </ul>
-    <p>Pour toute question, demande d’information ou collaboration, n’hésitez pas à nous contacter. Nous vous répondrons dans les plus brefs délais.</p>
+  <main>
+    <h2>Contactez-nous</h2>
+    <form onsubmit="event.preventDefault(); document.getElementById('confirmation').style.display = 'block'; this.reset();">
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" required>
 
-     <p><a href="index.html">← Retour à l'accueil</a></p>
-  </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-  <!-- Conteneur pour footer -->
-  <div id="footer-container"></div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
 
-  <script>
-    // Fonction pour charger un fichier HTML dans un container
-    function loadHTML(containerId, url) {
-      fetch(url)
-        .then(response => {
-          if (!response.ok) throw new Error('Erreur réseau');
-          return response.text();
-        })
-        .then(html => {
-          document.getElementById(containerId).innerHTML = html;
-        })
-        .catch(error => {
-          console.error('Erreur chargement HTML:', error);
-        });
-    }
+      <button type="submit">Envoyer</button>
+    </form>
 
-    // Charger header + nav, et footer
-    loadHTML('header-container', 'header.html');
-    loadHTML('footer-container', 'footer.html');
-  </script>
+    <div id="confirmation" class="confirmation">
+      Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.
+    </div>
 
+    <div class="coordinates">
+      <p><strong>Email :</strong> contact@np-solutions.eu</p>
+      <p><strong>Téléphone :</strong> +33 772 05 98 74</p>
+      <p><strong>Adresse :</strong> Paris, France</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/np-solutions-digital" target="_blank">🔗 LinkedIn</a>
+        <a href="https://www.facebook.com/np-solutions" target="_blank">📘 Facebook</a>
+      </div>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9998142343114!2d2.292292615674434!3d48.858844079287154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdeb1b1d2e7%3A0xd5f94f0a6d935b0b!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1622458889622!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+  </main>
+
+  <footer>
+    NP-SOLUTIONS • +33 772 05 98 74 • contact@np-solutions.eu • <a href="https://www.linkedin.com/company/np-solutions-digital" style="color: white;">LinkedIn</a> | <a href="https://www.facebook.com/np-solutions" style="color: white;">Facebook</a>
+  </footer>
 </body>
 </html>
