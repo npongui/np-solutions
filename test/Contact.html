@@ -111,24 +111,18 @@
       <a href="expertises.html">Expertises</a>
       <a href="references.html">Références</a>
       <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+      <a href="Contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <h2>Contactez-nous</h2>
-    <form onsubmit="event.preventDefault(); document.getElementById('confirmation').style.display = 'block'; this.reset();">
-      <label for="name">Nom</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <button type="submit">Envoyer</button>
-    </form>
+  <form action="https://formspree.io/f/mnqezjlj" method="POST">
+    <label>Nom :<br><input type="text" name="name" required></label><br><br>
+    <label>Email :<br><input type="email" name="email" required></label><br><br>
+    <label>Message :<br><textarea name="message" rows="5" required></textarea></label><br><br>
+    <button type="submit">Envoyer</button>
+  </form>
 
     <div id="confirmation" class="confirmation">
       Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.
